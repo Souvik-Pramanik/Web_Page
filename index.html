@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Invitation</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      width: 80%; 
+      max-width: 600px; /* Set a maximum width if needed */
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    /* .background-images {
+      max-width: 100%;
+  box-sizing: border-box;
+    }
+    .background-images img {
+      max-width: 100%;
+  box-sizing: border-box;
+    } */
+    .invitation-card {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    h1, h4 {
+      text-align: center;
+      color: #ff4081;
+    }
+    p {
+      text-align: center;
+      color: #495057;
+    }
+    .btn-rsvp {
+      display: block;
+      margin: 20px auto;
+      background-color: #ff4081;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .btn-rsvp:hover {
+      background-color: #d81b60;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    #transition{
+      width: 380px;
+      margin: auto;
+      padding: 10px;
+      box-sizing: border-box;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-45%, -45%);
+      font-family: "Dancing Script", cursive;
+      font-optical-sizing: auto;
+      font-weight: 800;
+      font-style: normal;
+    }
+    body {
+    background-image: url('https://images.unsplash.com/photo-1608232034071-c604ddc8470a?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .parent-container {
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .child-element {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  </style>
+</head>
+<body>
+  <!-- Background Images -->
+  <!-- <div class="background-images">
+    <img src="https://images.unsplash.com/photo-1608232034071-c604ddc8470a?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Birthday Image 1">
+    <img src="https://images.unsplash.com/photo-1541664342457-74ef081fb818?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Birthday Image 2">
+  </div> -->
+
+  
+
+  <div  id="transition" >
+    <h1 class="animate__animated animate__heartBeat">Birthday Celebration 🍾</h1>
+    <h4 class="animate__animated animate__pulse">You're Invited!</h4>
+    <p class="animate__animated animate__slideInDown">Come join me in celebrating My birthday!</p>
+    <p class="animate__animated animate__slideInDown">Date: <date>27.01.2024</date></p>
+    <p class="animate__animated animate__slideInDown">Time: 11:59 [Post-Meridiem]</p>
+    <p class="animate__animated animate__slideInDown">Venue: <a href="https://maps.app.goo.gl/PrQqEUQ419Kw3YdJ6">[22°20'57.7"N 87°18'53.2"E]</a></p>
+
+    <!-- Confetti Animation -->
+    <!-- <canvas id="confetti"></canvas> -->
+
+    <!-- RSVP Button with Animation -->
+    <button class="btn btn-rsvp animate__animated animate__rubberBand" onclick="openRSVPForm()">Remind Me Please😁</button>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.5/dist/sweetalert2.all.min.js"></script>
+
+  <!-- Confetti Animation Script -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("confetti", {
+      particles: {
+        number: { value: 50 },
+        size: { value: 3 },
+        color: { value: "#ff4081" },
+        move: { direction: "random", out_mode: "out" },
+        line_linked: { enable: false },
+      },
+      interactivity: { events: { onhover: { enable: true, mode: "repulse" } } },
+    });
+  </script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    function openRSVPForm() {
+      Swal.fire({
+      title: "RSVP",
+      text: "Thank you! Your Google Calendar will remind you on that day. 😀",
+      icon: "success",
+      confirmButtonText: "Great!",
+      customClass: {
+        popup: "animate__animated animate__bounceInDown",
+      },
+    }).then((result) => {
+      // Check if the confirm button is clicked
+      if (result.isConfirmed) {
+        // Redirect to Google.com
+        window.location.href = "https://www.google.com";
+      }
+    });
+      // Set the date and time for the calendar event
+      const eventDate = new Date("2024-01-27T14:00:00"); // 27th January 2024, 2:00 PM (adjust as needed)
+  
+      // Create a calendar event
+      const calendarEvent = 
+      `BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SUMMARY:Birthday Celebration
+DTSTART;TZID=Kharagpur/India:20240126T132500
+DTEND;TZID=Kharagpur/India:20240128T161200
+LOCATION:North Bhawanipur\, Kharagpur
+DESCRIPTION: Path- Take a toto to Bhowmick Kali Mandir\, Kharagpur
+STATUS:CONFIRMED
+SEQUENCE:3
+BEGIN:VALARM
+TRIGGER:-PT10M
+DESCRIPTION:Come join me in celebrating My birthday!
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR`;
+
+  
+      // Create a Blob from the calendar event string
+      const blob = new Blob([calendarEvent], { type: 'text/calendar' });
+  
+      // Create a URL for the Blob
+      const url = window.URL.createObjectURL(blob);
+  
+      // Create a link element
+      const link = document.createElement('a');
+  
+      // Set link attributes
+      link.href = `data:text/calendar;charset=utf-8,${encodeURIComponent(calendarEvent)}`;
+      link.setAttribute('download', 'birthday_event.ics');
+  
+      // Trigger a click on the link
+      link.click();
+  
+      // Release the URL object
+      window.URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
