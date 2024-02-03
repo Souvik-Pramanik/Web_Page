@@ -106,6 +106,27 @@
     max-width: 100%;
     box-sizing: border-box;
   }
+  .container {
+      position: relative;
+    }
+
+    /* Style for the text (optional) */
+    p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* Position the image absolutely within the container */
+    .overlay-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 465px;
+      width: 365px;
+      margin-left: 43px;
+      margin-top: -167px;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
@@ -117,21 +138,18 @@
 
   
 
-  <div  id="transition" >
+  <!-- <div  id="transition" >
     <h1 class="animate__animated animate__heartBeat">Birthday Celebration 🍾</h1>
     <h4 class="animate__animated animate__pulse">You're Invited!</h4>
     <p class="animate__animated animate__slideInDown">Come join me in celebrating My birthday!</p>
     <p class="animate__animated animate__slideInDown">Date: <date>27.01.2024</date></p>
     <p class="animate__animated animate__slideInDown">Time: 11:59 [Post-Meridiem]</p>
     <p class="animate__animated animate__slideInDown">Venue: <a href="https://maps.app.goo.gl/PrQqEUQ419Kw3YdJ6">[22°20'57.7"N 87°18'53.2"E]</a></p>
-
-    <!-- Confetti Animation -->
-    <!-- <canvas id="confetti"></canvas> -->
-
-    <!-- RSVP Button with Animation -->
     <button class="btn btn-rsvp animate__animated animate__rubberBand" onclick="openRSVPForm()">Remind Me Please😁</button>
+  </div> -->
+  <div class="container">
+    <img class="overlay-image" src="images/fairewell.png" alt="">
   </div>
-
   <!-- Bootstrap JS and Popper.js -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -157,10 +175,10 @@
   <script>
     function openRSVPForm() {
       Swal.fire({
-      title: "Process Done!",
+      title: "RSVP",
       text: "Thank you! Your Google Calendar will remind you on that day. 😀",
       icon: "success",
-      confirmButtonText: "Click On Your Own Risk!",
+      confirmButtonText: "Great!",
       customClass: {
         popup: "animate__animated animate__bounceInDown",
       },
@@ -168,7 +186,7 @@
       // Check if the confirm button is clicked
       if (result.isConfirmed) {
         // Redirect to Google.com
-        window.location.href = "https://streamable.com/bfozv3";
+        window.location.href = "https://www.google.com";
       }
     });
       // Set the date and time for the calendar event
